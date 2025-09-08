@@ -33,46 +33,9 @@ public class Libro {
 
     public void setPrecio(double precio) {
         this.precio = precio;
-
     }
 
-    public static double calcularPrecioTotal(Libro[] libros) {
-        double total = 0.0;
-        for (int i = 0; i < libros.length; i++) {
-            total += libros[i].getPrecio();
-        }
-        return total;
-
+    public void mostrarInfo() {
+        System.out.println(titulo + " - " + autor + " - $" + precio);
     }
-
-    public static Libro[] filtrarPorPrecioMayorA(Libro[] libros, double precioMinimo) {
-                int count = 0;
-                for (Libro libro : libros) {
-                 if (libro.getPrecio() > precioMinimo) {
-                     count++;
-                 }
-                }
-                Libro[] resultado = new Libro[count];
-                int idx = 0;
-                for (Libro libro : libros) {
-                 if (libro.getPrecio() > precioMinimo) {
-                     resultado[idx++] = libro;
-                 }
-                }
-                return resultado;
-    }
-
-    public static void ordenarPorPrecio(Libro[] libros) {
-        int n = libros.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (libros[j].getPrecio() > libros[j + 1].getPrecio()) {
-                    Libro temp = libros[j];
-                    libros[j] = libros[j + 1];
-                    libros[j + 1] = temp;
-                }
-            }
-        }
-    }
-
 }

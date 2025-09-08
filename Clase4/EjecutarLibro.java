@@ -1,7 +1,6 @@
 package Clase4;
 
 public class EjecutarLibro {
-    // Ejemplo de arreglo de Libro con 5 elementos
     public static void main(String[] args) {
         Libro[] libros = new Libro[5];
 
@@ -11,39 +10,43 @@ public class EjecutarLibro {
         libros[3] = new Libro("Rayuela", "Julio Cortázar", 22300);
         libros[4] = new Libro("Ficciones", "Jorge Luis Borges", 18400);
 
-        // Ejemplo de impresión de los libros
+        System.out.println("Listado de libros:");
         for (Libro libro : libros) {
-            System.out.println(libro.getTitulo() + " - " + libro.getAutor() + " - $" + libro.getPrecio());
+            libro.mostrarInfo();
         }
-        int precioTotal = 0;
+
+        double precioTotal = 0;
         for (Libro libro : libros) {
             precioTotal += libro.getPrecio();
         }
-        //Muestra el precio total de los libros
-        System.out.println("Precio total: $" + precioTotal);
+        System.out.println("\nPrecio total: $" + precioTotal);
 
         System.out.println("\nLibros con precio mayor a $20,000:");
         for (Libro libro : libros) {
             if (libro.getPrecio() > 20000) {
-                System.out.println(libro.getTitulo() + " - " + libro.getAutor() + " - $" + libro.getPrecio());
+                libro.mostrarInfo();
             }
         }
 
-    // Ordenar los libros por precio de menor a mayor usando burbuja
-    for (int i = 0; i < libros.length - 1; i++) {
-        for (int j = 0; j < libros.length - i - 1; j++) {
-        if (libros[j].getPrecio() > libros[j + 1].getPrecio()) {
-            Libro temp = libros[j];
-            libros[j] = libros[j + 1];
-            libros[j + 1] = temp;
+        GestorLibros.ordenarPorPrecio(libros);
+        System.out.println("\nLibros ordenados por precio (menor a mayor):");
+        for (Libro libro : libros) {
+            libro.mostrarInfo();
         }
-        }
-    }
 
-    System.out.println("\nLibros ordenados por precio (menor a mayor):");
-    for (Libro libro : libros) {
-        System.out.println(libro.getTitulo() + " - " + libro.getAutor() + " - $" + libro.getPrecio());
-    }
-        
+        GestorLibros gestorLibros = new GestorLibros();
+        gestorLibros.actualizarPrecio(libros, "El Principito", 18000);
+        System.out.println("\nDespués de actualizar precio de 'El Principito':");
+        for (Libro libro : libros) {
+            libro.mostrarInfo();
+        }
+
+        Libro encontrado = GestorLibros.buscarPorTitulo(libros, "Rayuela");
+        if (encontrado != null) {
+            System.out.println("\nLibro encontrado:");
+            encontrado.mostrarInfo();
+        } else {
+            System.out.println("\nLibro no encontrado.");
+        }
     }
 }

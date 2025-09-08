@@ -1,22 +1,30 @@
 public class Paquete {
-    private String destinatario;
+    private String nombreRemitente;
+    private String idRemitente;
+    private String direccionRemitente;
+
+    private String nombreDestinatario;
+    private String idDestinatario;
+    private String direccionDestinatario;
+
     private String fechaIngreso;
 
-    public Paquete(String destinatario, String fechaIngreso) {
-        this.destinatario = destinatario;
+    public Paquete(String nombreRem, String idRem, String dirRem,
+                   String nombreDest, String idDest, String dirDest,
+                   String fechaIngreso) {
+        this.nombreRemitente = nombreRem;
+        this.idRemitente = idRem;
+        this.direccionRemitente = dirRem;
+        this.nombreDestinatario = nombreDest;
+        this.idDestinatario = idDest;
+        this.direccionDestinatario = dirDest;
         this.fechaIngreso = fechaIngreso;
     }
 
-    public String getDestinatario() {
-        return destinatario;
-    }
-
-    public String getFechaIngreso() {
-        return fechaIngreso;
-    }
-
-    @Override
-    public String toString() {
-        return "Destinatario: " + destinatario + ", Fecha de ingreso: " + fechaIngreso;
+    public void mostrarInformacion() {
+        System.out.println("Fecha de ingreso: " + fechaIngreso);
+        System.out.println("Remitente: " + nombreRemitente + " (ID: " + idRemitente + ", Dirección: " + direccionRemitente + ")");
+        System.out.println("Destinatario: " + nombreDestinatario + " (ID: " + idDestinatario + ", Dirección: " + direccionDestinatario + ")");
     }
 }
+

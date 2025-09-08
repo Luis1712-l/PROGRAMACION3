@@ -22,20 +22,38 @@ public class Ejecutar {
                     System.out.print("Columna: ");
                     int columna = leer.nextInt();
                     leer.nextLine(); // limpiar buffer
-                    System.out.print("Destinatario: ");
-                    String destinatario = leer.nextLine();
+
+                    System.out.println("--- Datos del Remitente ---");
+                    System.out.print("Nombre: ");
+                    String nombreRem = leer.nextLine();
+                    System.out.print("Identificación: ");
+                    String idRem = leer.nextLine();
+                    System.out.print("Dirección: ");
+                    String dirRem = leer.nextLine();
+
+                    System.out.println("--- Datos del Destinatario ---");
+                    System.out.print("Nombre: ");
+                    String nombreDest = leer.nextLine();
+                    System.out.print("Identificación: ");
+                    String idDest = leer.nextLine();
+                    System.out.print("Dirección: ");
+                    String dirDest = leer.nextLine();
+
                     System.out.print("Fecha de ingreso: ");
                     String fecha = leer.nextLine();
-                    Paquete paquete = new Paquete(destinatario, fecha);
+
+                    Paquete paquete = new Paquete(nombreRem, idRem, dirRem, nombreDest, idDest, dirDest, fecha);
                     if (sistema.asignarPaquete(fila, columna, paquete)) {
                         System.out.println("Paquete asignado correctamente.");
                     } else {
                         System.out.println("Casillero ocupado.");
                     }
                     break;
+
                 case 2:
                     sistema.mostrarCasilleros();
                     break;
+
                 case 3:
                     System.out.print("Fila: ");
                     fila = leer.nextInt();
@@ -43,15 +61,15 @@ public class Ejecutar {
                     columna = leer.nextInt();
                     sistema.consultarPaquete(fila, columna);
                     break;
+
                 case 4:
                     activo = false;
                     System.out.println("Aplicación cerrada.");
                     break;
-                default:
+
+                case 5:
                     System.out.println("Opción inválida.");
             }
         }
-
-        leer.close(); // cerrar el Scanner
     }
 }
