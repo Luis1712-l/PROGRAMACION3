@@ -21,7 +21,7 @@ public class Ejecutar {
                     int fila = leer.nextInt();
                     System.out.print("Columna: ");
                     int columna = leer.nextInt();
-                    leer.nextLine(); // limpiar buffer
+                    leer.nextLine(); 
 
                     System.out.println("--- Datos del Remitente ---");
                     System.out.print("Nombre: ");
