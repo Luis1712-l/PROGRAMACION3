@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Ejecutar {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        SistemaCasilleros sistema = new SistemaCasilleros(3, 3); // ejemplo 3x3
+        SistemaCasilleros sistema = new SistemaCasilleros(3, 3); 
 
         boolean activo = true;
         while (activo) {
-            System.out.println("\n--- Menú Principal ---");
+            System.out.println("\n    Menú Principal    ");
             System.out.println("1. Registrar paquete");
             System.out.println("2. Consultar casilleros disponibles");
             System.out.println("3. Información de paquete");
