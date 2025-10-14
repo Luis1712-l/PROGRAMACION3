@@ -31,7 +31,7 @@ public class ExamenPilaMapa {
         public int desapilar() {
             if (estaVacia()) throw new IllegalStateException(" Pila v a c a ");
             int v = datos[tope];
-            tope--;  // CORREGIDO: Cambié "tope - -" por "tope--"
+            tope--;  
             return v;
         }
     }
@@ -92,3 +92,4 @@ public class ExamenPilaMapa {
         sc.close();
     }
 }
+
