@@ -1,13 +1,11 @@
-// Clase que representa el resultado del algoritmo de Dijkstra
-// Guarda la distancia mínima (cantidad) y el recorrido hecho
+// Clase que guarda el resultado del algoritmo de Dijkstra
 public class Dijkstra {
-    // Atributos principales
-    private int cantidad;     // Almacena la distancia mínima encontrada
-    private String recorrido; // Guarda el camino tomado como texto
+    private int cantidad;     // Distancia minima encontrada
+    private String recorrido; // Camino recorrido
     private int ini;          // Nodo inicial
     private int fin;          // Nodo final
 
-    // 🔹 Constructor: inicializa los valores del objeto Dijkstra
+    // Constructor
     public Dijkstra(int n, String re, int ini, int fin) {
         this.cantidad = n;
         this.recorrido = re;
@@ -15,13 +13,13 @@ public class Dijkstra {
         this.fin = fin;
     }
 
-    // 🔹 Muestra el resultado en un formato legible
-    @Override
+    // Muestra el resultado de forma que se pueda leer
+@Override
     public String toString() {
         return "Mínimo: " + this.cantidad + " | Recorrido: " + this.ini + " " + this.recorrido + this.fin;
     }
 
-    // 🔹 Getters y setters (para acceder o modificar los atributos)
+    // Getters y setters
     public int getCantidad() {
         return cantidad;
     }
