@@ -5,7 +5,7 @@ public class ArrayListEjemplo {
         ArrayList<String> obj = new ArrayList<String>();
         Scanner in = new Scanner(System.in);
         int c, ch;
-        String str, str1;
+        String str;
         char letter;
         int position;
         
